@@ -51,6 +51,7 @@
 
 			jQuery('*[data-embed-feed]').each(function() {
 				var
+				max = jQuery(this).data('max') || 3,
 				source = jQuery(this).data('embed-feed'),
 				title = jQuery(this).data('title'),
 				titleLink = jQuery(this).data('link');
@@ -64,6 +65,7 @@
 					feeds: {
 						source: source
 					},
+					max: max,
 					entryTemplate: self.entryTemplate,
 					loadingTemplate: self.loadingTemplate
 				});
